@@ -1,15 +1,19 @@
 ## Use Custom Font
 
-### 1¡¢ÔÚÏîÄ¿ÖĞµÄassetsÄ¿Â¼ÏÂÔö¼ÓfontsÄ¿Â¼£¬¿½±´×ÖÌåÎÄ¼şµ½¸ÃÄ¿Â¼¡£
-### 2¡¢»ñµÃ×ÖÌå¡£
+### 1ã€åœ¨é¡¹ç›®ä¸­çš„assetsç›®å½•ä¸‹å¢åŠ fontsç›®å½•ï¼Œæ‹·è´å­—ä½“æ–‡ä»¶åˆ°è¯¥ç›®å½•ã€‚
+### 2ã€è·å¾—å­—ä½“ã€‚
 ```java
 Typeface tfMinecraft = Typeface.createFromAsset(getAssets(), "fonts/minecraft.ttf");
 ```
-### 3¡¢Ó¦ÓÃ×ÖÌå¡£
+### 3ã€åº”ç”¨å­—ä½“ã€‚
 ```java
 TextView tvTitle = (TextView)findViewById(R.id.tvTitle);
 tvTitle.setTypeface(tfMinecraft);
 ```
+
+## å­—ä½“æ–‡ä»¶
+- ![minecraft](app/src/main/assets/fonts/minecraft.ttf)æ˜¾ç¤ºæ ‡é¢˜
+- ![halflife2](app/src/main/assets/fonts/halflife2.ttf)æ˜¾ç¤ºæ•°å­—
 
 ## Snapshot
 ![](snapshots/main.png)
