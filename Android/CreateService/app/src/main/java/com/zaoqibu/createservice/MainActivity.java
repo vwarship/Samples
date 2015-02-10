@@ -1,30 +1,26 @@
 package com.zaoqibu.createservice;
 
 import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
 public class MainActivity extends ActionBarActivity {
-    private MyService myService = null;
+    private RunningAppProcessService runningAppProcessService = null;
     private ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            Log.i("test", "onServiceConnected");
-            myService = ((MyService.MyBinder)service).getService();
+            runningAppProcessService = ((RunningAppProcessService.MyBinder)service).getService();
         }
 
         @Override
         public void onServiceDisconnected(ComponentName name) {
-            Log.i("test", "onServiceDisconnected");
-            myService = null;
+            runningAppProcessService = null;
         }
     };
 
@@ -33,9 +29,8 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.i("test", "bindService");
-        Intent intent = new Intent(this, MyService.class);
-        bindService(intent, serviceConnection, Context.BIND_AUTO_CREATE);
+        Intent intent = new Intent(MainActivity.this, RunningAppProcessService.class);
+        bindService(intent, serviceConnection, BIND_AUTO_CREATE);
     }
 
 
