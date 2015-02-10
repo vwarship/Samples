@@ -6,8 +6,12 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ListView;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -16,6 +20,7 @@ public class MainActivity extends ActionBarActivity {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             runningAppProcessService = ((RunningAppProcessService.MyBinder)service).getService();
+            Log.i("test", "onServiceConnected");
         }
 
         @Override
@@ -29,10 +34,18 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Button btnShow = (Button)findViewById(R.id.btn_show);
+        btnShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ListView lvRunningAppProgresses = (ListView)findViewById(R.id.lv_running_app_processes);
+                lvRunningAppProgresses.setAdapter(new RunningAppProgressesAdapter(MainActivity.this, runningAppProcessService.getRunningAppProgresses()));
+            }
+        });
+
         Intent intent = new Intent(MainActivity.this, RunningAppProcessService.class);
         bindService(intent, serviceConnection, BIND_AUTO_CREATE);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
