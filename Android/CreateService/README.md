@@ -1,6 +1,6 @@
 ﻿## Create Service
 
-1. 创建 Service 类
+1.创建 Service 类
 ```java
 public class RunningAppProcessService extends Service {
     @Override
@@ -10,7 +10,7 @@ public class RunningAppProcessService extends Service {
 }
 ```
 
-2. 设置 Service 重启的行为
+2.设置 Service 重启的行为
 ```java
 public class RunningAppProcessService extends Service {
     @Override
@@ -21,7 +21,7 @@ public class RunningAppProcessService extends Service {
 }
 ```
 
-3. 实现 onBind
+3.实现 onBind
 ```java
 public class RunningAppProcessService extends Service {
     private IBinder myBinder = new MyBinder();
@@ -45,7 +45,7 @@ public class RunningAppProcessService extends Service {
 }
 ```
 
-4. 定义 ServiceConnection
+4.定义 ServiceConnection
 ```java
 public class MainActivity extends ActionBarActivity {
     private RunningAppProcessService runningAppProcessService = null;
@@ -63,14 +63,14 @@ public class MainActivity extends ActionBarActivity {
 }
 ```
 
-5. 绑定一个服务
+5.绑定一个服务
 ```java
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        *Intent intent = new Intent(MainActivity.this, RunningAppProcessService.class);
-        bindService(intent, serviceConnection, BIND_AUTO_CREATE);*
+        Intent intent = new Intent(MainActivity.this, RunningAppProcessService.class);
+        bindService(intent, serviceConnection, BIND_AUTO_CREATE);
     }
 ```
