@@ -74,3 +74,6 @@ public class MainActivity extends ActionBarActivity {
         bindService(intent, serviceConnection, BIND_AUTO_CREATE);
     }
 ```
+
+## 例子：显示所有运行的应用程序
+![显示所有运行的应用程序](snapshots/show_running_applications.png)
