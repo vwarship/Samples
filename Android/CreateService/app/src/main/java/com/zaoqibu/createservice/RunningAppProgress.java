@@ -1,13 +1,15 @@
 package com.zaoqibu.createservice;
 
+import android.graphics.drawable.Drawable;
+
 /**
  * Created by vwarship on 2015/2/11.
  */
 public class RunningAppProgress {
     private String name;
-    private int icon;
+    private Drawable icon;
 
-    public RunningAppProgress(String name, int icon) {
+    public RunningAppProgress(String name, Drawable icon) {
         this.name = name;
         this.icon = icon;
     }
@@ -16,7 +18,7 @@ public class RunningAppProgress {
         return name;
     }
 
-    public int getIcon() {
+    public Drawable getIcon() {
         return icon;
     }
 

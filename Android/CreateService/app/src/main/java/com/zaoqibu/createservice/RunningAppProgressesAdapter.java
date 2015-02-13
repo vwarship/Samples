@@ -49,7 +49,7 @@ public class RunningAppProgressesAdapter extends BaseAdapter {
         }
 
         ImageView ivAppIcon = (ImageView)view.findViewById(R.id.iv_app_icon);
-        ivAppIcon.setImageResource(runningAppProgresses.get(position).getIcon());
+        ivAppIcon.setImageDrawable(runningAppProgresses.get(position).getIcon());
 
         TextView tvAppName = (TextView)view.findViewById(R.id.tv_app_name);
         tvAppName.setText(runningAppProgresses.get(position).getName());
