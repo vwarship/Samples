@@ -10,10 +10,14 @@ import android.os.Binder;
 import android.os.IBinder;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class RunningAppProcessService extends Service {
     private IBinder myBinder = new MyBinder();
+
+    private Map<String, ApplicationInfo> processNameAndApplicationInfoMap = new HashMap<String, ApplicationInfo>();
 
     public RunningAppProcessService() {
     }
@@ -32,6 +36,13 @@ public class RunningAppProcessService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        PackageManager packageManager = this.getPackageManager();
+        List<ApplicationInfo> applicationInfos = packageManager.getInstalledApplications(PackageManager.GET_UNINSTALLED_PACKAGES);
+
+        for (ApplicationInfo applicationInfo : applicationInfos) {
+            processNameAndApplicationInfoMap.put(applicationInfo.processName, applicationInfo);
+        }
     }
 
     @Override
@@ -60,15 +71,7 @@ public class RunningAppProcessService extends Service {
     }
 
     private ApplicationInfo getApplicationInfoByProcessName(final String processName) {
-        PackageManager packageManager = this.getApplicationContext().getPackageManager();
-        List<ApplicationInfo> applicationInfos = packageManager.getInstalledApplications(PackageManager.GET_UNINSTALLED_PACKAGES);
-
-        for (ApplicationInfo applicationInfo : applicationInfos) {
-            if (processName.equals(applicationInfo.processName))
-                return applicationInfo;
-        }
-
-        return null;
+        return processNameAndApplicationInfoMap.get(processName);
     }
 
 }
