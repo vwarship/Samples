@@ -13,4 +13,9 @@ public class DollarTest extends TestCase {
         assertEquals(10, dollar.times(2).getAmount());
         assertEquals(15, dollar.times(3).getAmount());
     }
+
+    public void testEquality() {
+        assertTrue(new Dollar(5).equals(new Dollar(5)));
+        assertFalse(new Dollar(5).equals(new Dollar(6)));
+    }
 }
