@@ -9,8 +9,8 @@ import junit.framework.TestCase;
 public class DollarTest extends TestCase {
     public void testMultiplication() {
         Dollar dollar = new Dollar(5);
-        dollar.times(2);
 
-        assertEquals(10, dollar.getAmount());
+        assertEquals(10, dollar.times(2).getAmount());
+        assertEquals(15, dollar.times(3).getAmount());
     }
 }
