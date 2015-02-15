@@ -14,10 +14,6 @@ public class Dollar {
         return new Dollar(amount*multiplier);
     }
 
-    public int getAmount() {
-        return amount;
-    }
-
     @Override
     public boolean equals(Object obj) {
         Dollar dollar = (Dollar)obj;

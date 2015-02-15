@@ -10,8 +10,8 @@ public class DollarTest extends TestCase {
     public void testMultiplication() {
         Dollar dollar = new Dollar(5);
 
-        assertEquals(10, dollar.times(2).getAmount());
-        assertEquals(15, dollar.times(3).getAmount());
+        assertEquals(new Dollar(10), dollar.times(2));
+        assertEquals(new Dollar(15), dollar.times(3));
     }
 
     public void testEquality() {
