@@ -93,7 +93,7 @@ public boolean onKeyDown(int keyCode, KeyEvent event) {
 ```
 
 ### 在 WebView 中使用 JavaScript。
-1. 在 assets 目录下增加 javascript.html。
+* 1. 在 assets 目录下增加 javascript.html。
 ```javascript
 <input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
 
@@ -104,7 +104,7 @@ public boolean onKeyDown(int keyCode, KeyEvent event) {
 </script>
 ```
 
-2. 绑定 JavaScript 代码到 Android 代码。
+* 2. 绑定 JavaScript 代码到 Android 代码。
 ```java
 public class WebAppInterface {
     Context mContext;
@@ -119,6 +119,7 @@ public class WebAppInterface {
         Toast.makeText(mContext, toast, Toast.LENGTH_SHORT).show();
     }
 }
+
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
