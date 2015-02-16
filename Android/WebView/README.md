@@ -93,18 +93,7 @@ public boolean onKeyDown(int keyCode, KeyEvent event) {
 ```
 
 ### 在 WebView 中使用 JavaScript。
-* 1. 在 assets 目录下增加 javascript.html。
-```javascript
-<input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
-
-<script type="text/javascript">
-    function showAndroidToast(toast) {
-        Android.showToast(toast);
-    }
-</script>
-```
-
-* 2. 绑定 JavaScript 代码到 Android 代码。
+* 1. 绑定 JavaScript 代码到 Android 代码。
 ```java
 public class WebAppInterface {
     Context mContext;
@@ -131,6 +120,17 @@ protected void onCreate(Bundle savedInstanceState) {
 		webView.addJavascriptInterface(new WebAppInterface(this), "Android");
 		webView.loadUrl("file:///android_asset/javascript.html");
 }
+```
+
+* 2. 在 assets 目录下增加 javascript.html。
+```javascript
+<input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
+
+<script type="text/javascript">
+    function showAndroidToast(toast) {
+        Android.showToast(toast);
+    }
+</script>
 ```
 
 ![](snapshots/javascript_call_android_code.png)
