@@ -5,6 +5,6 @@
 * [使用自定义字体](UseCustomFont)
 
 ### 控件
-* [ListFragment - 显示中国的省份](ListFragmentExample)
+* [ListFragment](ListFragmentExample)
 * [WebView](WebView)
 * [AnalogClock和DigitalClock - 时钟](Clock)
