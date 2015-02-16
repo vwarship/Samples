@@ -1,11 +1,12 @@
 package com.zaoqibu.webview;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -15,16 +16,41 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final String url = "http://www.baidu.com";
-
         WebView webView = (WebView)findViewById(R.id.webView);
+        loadUrlWithWebPage(webView);
+//        loadUrlWithRedirectWebPage(webView);
+//        loadDataWithDynamicHtml(webView);
+//        loadUrlWithWebPageInAssets(webView);
 
+        // 支持缩放
         WebSettings webSettings = webView.getSettings();
         webSettings.setBuiltInZoomControls(true);
+    }
 
+    private void loadUrlWithWebPage(WebView webView) {
+        final String url = "http://politics.people.com.cn/n/2015/0216/c1001-26575574.html";
         webView.loadUrl(url);
     }
 
+    private void loadUrlWithRedirectWebPage(WebView webView) {
+        final String url = "http://www.baidu.com";
+        webView.loadUrl(url);
+
+        webView.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return false;
+            }
+        });
+    }
+
+    private void loadDataWithDynamicHtml(WebView webView) {
+        webView.loadData("<h1>Hello World!</h1>", "text/html", "utf-8");
+    }
+
+    private void loadUrlWithWebPageInAssets(WebView webView) {
+        webView.loadUrl("file:///android_asset/index.html");
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
