@@ -77,3 +77,59 @@ webView.setWebViewClient(new WebViewClient() {
 
 * 如果没增加支持重定向将出现下面的提示
 ![](snapshots/load_url_not_support_redirect.png)
+
+### 支持网页历史导航（当用户按回退按键时，可以回退到上一个浏览的网页。）
+* 在 MainActivity 类中重载 onKeyDown 方法。
+```java
+@Override
+public boolean onKeyDown(int keyCode, KeyEvent event) {
+    if (webView.canGoBack() && keyCode == KeyEvent.KEYCODE_BACK) {
+        webView.goBack();
+        return true;
+    }
+
+    return super.onKeyDown(keyCode, event);
+}
+```
+
+### 在 WebView 中使用 JavaScript。
+1. 在 assets 目录下增加 javascript.html。
+```javascript
+<input type="button" value="Say hello" onClick="showAndroidToast('Hello Android!')" />
+
+<script type="text/javascript">
+    function showAndroidToast(toast) {
+        Android.showToast(toast);
+    }
+</script>
+```
+
+2. 绑定 JavaScript 代码到 Android 代码。
+```java
+public class WebAppInterface {
+    Context mContext;
+
+    WebAppInterface(Context c) {
+        mContext = c;
+    }
+
+    /** Show a toast from the web page */
+    @JavascriptInterface
+    public void showToast(String toast) {
+        Toast.makeText(mContext, toast, Toast.LENGTH_SHORT).show();
+    }
+}
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+
+		WebView webView = (WebView)findViewById(R.id.webView);
+		WebSettings webSettings = webView.getSettings();
+		webSettings.setJavaScriptEnabled(true);
+		
+		webView.addJavascriptInterface(new WebAppInterface(this), "Android");
+		webView.loadUrl("file:///android_asset/javascript.html");
+}
+```
+
+![](snapshots/javascript_call_android_code.png)
