@@ -28,7 +28,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new downloadTextTask().execute(makeURLStringWithGitHub("text.txt"));
+        new DownloadTextTask().execute(makeURLStringWithGitHub("text.txt"));
     }
 
     private String makeURLStringWithGitHub(String filename) {
@@ -36,7 +36,7 @@ public class MainActivity extends ActionBarActivity {
         return String.format(gitHubURLFormat, filename);
     }
 
-    private class downloadTextTask extends AsyncTask<String, Void, String> {
+    private class DownloadTextTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
             return downloadText(params[0]);
