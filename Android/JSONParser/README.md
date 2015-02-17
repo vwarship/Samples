@@ -3,9 +3,11 @@
 * 1. 在主布局（activity_main.xml）中添加 TextView 控件。
 ```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" 
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" tools:context=".MainActivity">
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_horizontal_margin"
+    tools:context=".MainActivity">
 
     <ScrollView
         android:layout_width="match_parent"

@@ -8,6 +8,7 @@
 * [下载图片](DownloadImage)
 * [下载文本](DownloadText)
 * [JSON 服务解析](JSONParser)
+* [XML 服务解析](XMLServiceParse)
 
 ### 控件
 * [ListFragment](ListFragmentExample)
