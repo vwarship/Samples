@@ -5,7 +5,6 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -31,16 +30,7 @@ public class MainActivity extends ActionBarActivity {
         @Override
         protected Bitmap doInBackground(String... params) {
             String url = params[0];
-            Bitmap bitmap = null;
-
-            try {
-                bitmap = downloadImage(url);
-            }
-            catch (IOException e) {
-                Log.i("example", e.getMessage());
-            }
-
-            return bitmap;
+            return downloadImage(url);
         }
 
         @Override
@@ -50,10 +40,10 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-    private Bitmap downloadImage(String urlStr) throws IOException {
-        Bitmap bitmap = null;
+    private InputStream openHttpConnection(String urlString) throws IOException {
+        InputStream inputStream = null;
 
-        URL url = new URL(urlStr);
+        URL url = new URL(urlString);
         URLConnection urlConnection = url.openConnection();
 
         HttpURLConnection httpURLConnection = (HttpURLConnection)urlConnection;
@@ -62,11 +52,20 @@ public class MainActivity extends ActionBarActivity {
         httpURLConnection.setRequestMethod("GET");
 
         if (httpURLConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-            InputStream inputStream = httpURLConnection.getInputStream();
-            bitmap = BitmapFactory.decodeStream(inputStream);
+            inputStream = httpURLConnection.getInputStream();
         }
 
-        return  bitmap;
+        return inputStream;
+    }
+
+    private Bitmap downloadImage(String urlString) {
+        InputStream inputStream = null;
+        try {
+            inputStream = openHttpConnection(urlString);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return  BitmapFactory.decodeStream(inputStream);
     }
 
     @Override
