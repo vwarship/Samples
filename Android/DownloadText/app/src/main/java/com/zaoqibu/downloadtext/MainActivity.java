@@ -33,15 +33,7 @@ public class MainActivity extends ActionBarActivity {
     private class downloadTextTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
-            String text = "";
-
-            try {
-                text = downloadText(params[0]);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            return text;
+            return downloadText(params[0]);
         }
 
         @Override
@@ -51,8 +43,8 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-    private String downloadText(String urlString) throws IOException {
-        StringBuilder sb = new StringBuilder();
+    private InputStream openHttpConnection(String urlString) throws IOException {
+        InputStream inputStream = null;
 
         URL url = new URL(urlString);
         URLConnection urlConnection = url.openConnection();
@@ -63,15 +55,28 @@ public class MainActivity extends ActionBarActivity {
         httpURLConnection.setRequestMethod("GET");
 
         if (httpURLConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-            InputStream inputStream = httpURLConnection.getInputStream();
+            inputStream = httpURLConnection.getInputStream();
+        }
 
-            final int BUF_SIZE = 4096;
-            char[] buf = new char[BUF_SIZE];
-            int readedLen = 0;
+        return inputStream;
+    }
+
+    private String downloadText(String urlString) {
+        StringBuilder sb = new StringBuilder();
+
+        final int BUF_SIZE = 4096;
+        char[] buf = new char[BUF_SIZE];
+        int readedLen = 0;
+
+        try {
+            InputStream inputStream = openHttpConnection(urlString);
             InputStreamReader reader = new InputStreamReader(inputStream);
+
             while ((readedLen = reader.read(buf)) > 0) {
                 sb.append(new String(buf, 0, readedLen));
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
         return sb.toString();
