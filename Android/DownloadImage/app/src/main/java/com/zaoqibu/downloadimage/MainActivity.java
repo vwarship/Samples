@@ -84,6 +84,16 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
+    private Bitmap downloadImage(String urlString) {
+        InputStream inputStream = null;
+        try {
+            inputStream = openHttpConnection(urlString);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return  BitmapFactory.decodeStream(inputStream);
+    }
+
     private InputStream openHttpConnection(String urlString) throws IOException {
         InputStream inputStream = null;
 
@@ -100,16 +110,6 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return inputStream;
-    }
-
-    private Bitmap downloadImage(String urlString) {
-        InputStream inputStream = null;
-        try {
-            inputStream = openHttpConnection(urlString);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return  BitmapFactory.decodeStream(inputStream);
     }
 
     @Override
