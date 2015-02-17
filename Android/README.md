@@ -6,6 +6,7 @@
 
 ### 网络
 * [下载图片](DownloadImage)
+* [下载文本](DownloadText)
 
 ### 控件
 * [ListFragment](ListFragmentExample)
