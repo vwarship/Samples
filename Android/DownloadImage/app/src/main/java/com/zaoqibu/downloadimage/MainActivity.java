@@ -23,15 +23,21 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        new DownloadImageTask().execute("http://www.iyi8.com/uploadfile/2014/1102/20141102084643851.jpg");
+//        new DownloadImageTask().execute(makeURLStringWithGitHub("1"));
+
         new DownloadImagesTask().execute(
-                "http://www.iyi8.com/uploadfile/2014/1102/20141102084641432.jpg",
-                "http://www.iyi8.com/uploadfile/2014/1102/20141102084642235.jpg",
-                "http://www.iyi8.com/uploadfile/2014/1102/20141102084643851.jpg",
-                "http://www.iyi8.com/uploadfile/2014/1102/20141102084644975.jpg",
-                "http://www.iyi8.com/uploadfile/2014/1102/20141102084645813.jpg",
-                "http://www.iyi8.com/uploadfile/2014/1102/20141102084645384.jpg",
-                "http://www.iyi8.com/uploadfile/2014/1102/20141102084646159.jpg");
+                makeURLStringWithGitHub("1"),
+                makeURLStringWithGitHub("2"),
+                makeURLStringWithGitHub("3"),
+                makeURLStringWithGitHub("4"),
+                makeURLStringWithGitHub("5"),
+                makeURLStringWithGitHub("6"),
+                makeURLStringWithGitHub("7"));
+    }
+
+    private String makeURLStringWithGitHub(String filename) {
+        String gitHubURLFormat = "https://raw.githubusercontent.com/vwarship/Samples/master/Android/DownloadImage/images/%s.jpg";
+        return String.format(gitHubURLFormat, filename);
     }
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
