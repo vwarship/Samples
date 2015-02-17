@@ -23,7 +23,15 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new DownloadImageTask().execute("http://www.iyi8.com/uploadfile/2014/1102/20141102084643851.jpg");
+//        new DownloadImageTask().execute("http://www.iyi8.com/uploadfile/2014/1102/20141102084643851.jpg");
+        new DownloadImagesTask().execute(
+                "http://www.iyi8.com/uploadfile/2014/1102/20141102084641432.jpg",
+                "http://www.iyi8.com/uploadfile/2014/1102/20141102084642235.jpg",
+                "http://www.iyi8.com/uploadfile/2014/1102/20141102084643851.jpg",
+                "http://www.iyi8.com/uploadfile/2014/1102/20141102084644975.jpg",
+                "http://www.iyi8.com/uploadfile/2014/1102/20141102084645813.jpg",
+                "http://www.iyi8.com/uploadfile/2014/1102/20141102084645384.jpg",
+                "http://www.iyi8.com/uploadfile/2014/1102/20141102084646159.jpg");
     }
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
@@ -37,6 +45,36 @@ public class MainActivity extends ActionBarActivity {
         protected void onPostExecute(Bitmap bitmap) {
             ImageView imageView = (ImageView)findViewById(R.id.imageView);
             imageView.setImageBitmap(bitmap);
+        }
+    }
+
+    private class DownloadImagesTask extends AsyncTask<String, Bitmap, Void> {
+
+        @Override
+        protected Void doInBackground(String... params) {
+            final int length = params.length;
+
+            for (String urlString : params) {
+                Bitmap bitmap = downloadImage(urlString);
+                publishProgress(bitmap);
+
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Bitmap... values) {
+            ImageView imageView = (ImageView)findViewById(R.id.imageView);
+            imageView.setImageBitmap(values[0]);
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
         }
     }
 
