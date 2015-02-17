@@ -96,4 +96,4 @@ public class MainActivity extends ActionBarActivity {
 ```
 
 ![](snapshots/download_text.png)
-[国家信息安全专项及下一代互联网技术研发、产业化和规模商用专项项目清单](text.txt)
+* [国家信息安全专项及下一代互联网技术研发、产业化和规模商用专项项目清单](text.txt)
