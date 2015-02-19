@@ -7,8 +7,9 @@ import android.widget.TextView;
 
 import java.util.concurrent.TimeUnit;
 
-
 public class MainActivity extends ActionBarActivity {
+    private CounterRunnable counterRunnable = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,38 +19,48 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void startCounter() {
-        Thread thread = new Thread(new Runnable() {
-            int i = 0;
+        counterRunnable = new CounterRunnable();
+        Thread thread = new Thread(counterRunnable);
+        thread.start();
+    }
 
-            @Override
-            public void run() {
-                final TextView textView = (TextView)findViewById(R.id.textView);
+    private class CounterRunnable implements Runnable {
+        private volatile boolean isCancel = false;
+        int i = 0;
 
-                while (i < 10) {
-                    ++i;
-                    Log.i("examples", String.valueOf(i));
+        public void cancel() {
+            isCancel = true;
+        }
 
-                    textView.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            textView.setText(String.valueOf(i));
-                        }
-                    });
+        @Override
+        public void run() {
+            final TextView textView = (TextView)findViewById(R.id.textView);
 
-                    try {
-                        TimeUnit.SECONDS.sleep(1);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+            while (!isCancel && i < 10) {
+                ++i;
+                Log.i("examples", String.valueOf(i));
+
+                textView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        textView.setText(String.valueOf(i));
                     }
+                });
+
+                try {
+                    TimeUnit.SECONDS.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
-        });
-
-        thread.start();
+        }
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
+        if (counterRunnable != null)
+            counterRunnable.cancel();
     }
 }
