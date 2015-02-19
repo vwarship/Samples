@@ -3,7 +3,6 @@ package com.zaoqibu.asynctask;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
