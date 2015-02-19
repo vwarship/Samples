@@ -5,6 +5,7 @@
 * [使用自定义字体](UseCustomFont)
 
 ### 异步
+* [异步任务](AsyncTask)
 * [线程](Thread)
 
 ### 网络
