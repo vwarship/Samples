@@ -9,6 +9,6 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
          android:id="@+id/textView"
-        android:textSize="96sp"/>
+        android:textSize="200sp"/>
 
 </RelativeLayout>
