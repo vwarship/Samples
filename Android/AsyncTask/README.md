@@ -33,8 +33,16 @@
 ```java
 public class MainActivity extends ActionBarActivity {
     final int maxValue = 10;
+    CounterTask counterTask = null;
 
     private class CounterTask extends AsyncTask<Integer, Integer, Void> {
+        @Override
+        protected void onPreExecute() {
+            ProgressBar progressBar = (ProgressBar)findViewById(R.id.progressBar);
+            progressBar.setMax(maxValue);
+            progressBar.setProgress(0);
+        }
+
         @Override
         protected Void doInBackground(Integer... params) {
             int maxValue = params[0];
@@ -46,6 +54,11 @@ public class MainActivity extends ActionBarActivity {
                 }
 
                 publishProgress(i);
+
+                if (isCancelled())
+                    break;
+
+                Log.i("examples", String.valueOf(i));
             }
 
             return null;
@@ -59,7 +72,7 @@ public class MainActivity extends ActionBarActivity {
             progressBar.setProgress(curValue);
 
             TextView textView = (TextView)findViewById(R.id.textView);
-            textView.setText(String.valueOf(curValue*100/maxValue));
+            textView.setText(String.valueOf(curValue * 100 / maxValue) + '%');
         }
 
         @Override
@@ -73,18 +86,26 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ProgressBar progressBar = (ProgressBar)findViewById(R.id.progressBar);
-        progressBar.setMax(maxValue);
-
-        CounterTask counterTask = new CounterTask();
+        counterTask = new CounterTask();
         counterTask.execute(maxValue);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (counterTask != null)
+            counterTask.cancel(true);
     }
 }
 ```
 
-* CounterTask 继承 AsyncTask （异步任务）类，在UI类中 new CounterTask 类，调用 execute 方法。
-* doInBackground 后台线程执行任务，参数类型由AsyncTask的第一个参数指定。调用 publishProgress 的参数类型由AsyncTask的第二个参数指定，由UI线程调用 onProgressUpdate。
-* onProgressUpdate UI线程调用，用于更新 UI，参数类型由AsyncTask的第二个参数指定。
-* onPostExecute UI线程调用，线程执行结束调用，参数类型由AsyncTask的第三个参数指定。
+* 实现 AsyncTask 的方法
+	* onPreExecute UI线程调用，任务执行前调用。
+	* doInBackground 后台线程执行任务，参数类型由AsyncTask的第一个参数指定。调用 publishProgress 的参数类型由AsyncTask的第二个参数指定，由UI线程调用 onProgressUpdate。
+	* onProgressUpdate UI线程调用，用于更新 UI，参数类型由AsyncTask的第二个参数指定。
+	* onPostExecute UI线程调用，任务执行完成调用，参数类型由AsyncTask的第三个参数指定。
+* CounterTask 的调用
+	* 在UI类中 new CounterTask 类，调用 execute 方法，参数类型由AsyncTask的第一个参数指定。
+	* 在 onDestroy 方法中调用异步任务的 cancel 方法。需要在异步任务的功能实现中使用 isCancelled 方法来结束任务的执行。
 
 ![](snapshots/async_task_counter.png)
