@@ -1,21 +1,49 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-    <TextView android:layout_width="wrap_content"
+    <Switch
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvBluetoothState"/>
+        android:text="蓝牙"
+        android:id="@+id/switchBluetooth"
+        android:onClick="onClickSwitchBluetooth"/>
 
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvAddress"/>
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvAddress_"
+        android:text="地址　"
+        android:layout_below="@+id/switchBluetooth"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvName"/>
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvAddress"
+        android:layout_alignTop="@+id/tvAddress_"
+        android:layout_toRightOf="@+id/tvAddress_"
+        android:layout_toEndOf="@+id/tvAddress_" />
 
-</LinearLayout>
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvName_"
+        android:text="名字　"
+        android:layout_below="@+id/tvAddress_"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/tvName"
+        android:layout_alignTop="@+id/tvName_"
+        android:layout_toRightOf="@+id/tvName_"
+        android:layout_toEndOf="@+id/tvName_" />
+
+</RelativeLayout>
