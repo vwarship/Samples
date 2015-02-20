@@ -15,7 +15,6 @@ import android.widget.TextView;
 public class MainActivity extends ActionBarActivity {
     private BroadcastReceiver bluetoothStateChangeReceiver = null;
     private static final int BLUETOOTH_ENABLE = 1;
-    private static final int BLUETOOTH_DISABLE = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
