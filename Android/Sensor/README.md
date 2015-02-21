@@ -90,3 +90,6 @@ public class MainActivity extends ActionBarActivity {
   * 2. 在 onPause 方法中注销。sensorManager.unregisterListener(accelerometerSensorEventListener);
 
 ![](snapshots/all_sensor.png)
+
+### 坐标系统
+![](snapshots/axis_device.png)
