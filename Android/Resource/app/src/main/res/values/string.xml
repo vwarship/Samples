@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="hello">Simple String: Hello</string>
+    
     <string-array name="rgb">
         <item>Red</item>
         <item>Green</item>
         <item>Blue</item>
     </string-array>
+    
+    <plurals name="numberOfSongsAvailable">
+        <item quantity="one">%d sound found.</item>
+        <item quantity="other">%d sounds found.</item>
+    </plurals>
+
+    <string name="escaping">String Escaping: \"I don\'t know.\"</string>
 </resources>
