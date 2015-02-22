@@ -7,6 +7,7 @@
 ![](snapshots/activity_fragment_lifecycle.png)
 
 ### 运行结果
+```xml
 Activity﹕ onCreate Enter
 	Fragment﹕ onAttach Enter
 	Fragment﹕ onAttach Leave
@@ -41,3 +42,4 @@ Fragment﹕ onDetach Enter
 Fragment﹕ onDetach Leave
 Activity﹕ onDestroy Enter
 Activity﹕ onDestroy Leave
+```
