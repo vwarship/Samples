@@ -4,6 +4,9 @@
 * [创建服务](CreateService)
 * [使用自定义字体](UseCustomFont)
 
+### 用户界面
+* [Fragment 生命周期](FragmentLifecycle)
+
 ### 异步
 * [异步任务](AsyncTask)
 * [线程](Thread)
