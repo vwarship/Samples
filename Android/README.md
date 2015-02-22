@@ -30,4 +30,4 @@
 * [传感器](Sensor)
 
 ### FAQ
-* [度量单位转换](FAQ/measure_unit_convert.md)
+* [在代码中指定度量单位](FAQ/using_measure_unit.md)
