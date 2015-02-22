@@ -3,6 +3,14 @@
 ### 使用函数 TypedValue.applyDimension
 ```java
 TypedValue.applyDimension(unit, value, getResources().getDisplayMetrics());
+
+// 可以指定的度量单位
+TypedValue.COMPLEX_UNIT_PX	//complex unit: Value is raw pixels.
+TypedValue.COMPLEX_UNIT_DIP	//complex unit: Value is Device Independent Pixels.
+TypedValue.COMPLEX_UNIT_SP	//complex unit: Value is a scaled pixel.
+TypedValue.COMPLEX_UNIT_PT	//complex unit: Value is in points.
+TypedValue.COMPLEX_UNIT_IN	//complex unit: Value is in inches.
+TypedValue.COMPLEX_UNIT_MM	//complex unit: Value is in millimeters.
 ```
 
 ### 例子：创建 TextView 的代码
