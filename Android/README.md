@@ -5,6 +5,7 @@
 * [使用自定义字体](UseCustomFont)
 
 ### 用户界面
+* [使用代码创建布局](UsingCodeCreateLayout)
 * [Fragment 生命周期](FragmentLifecycle)
 
 ### 异步
