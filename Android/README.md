@@ -6,6 +6,7 @@
 
 ### 用户界面
 * [使用代码创建布局](UsingCodeCreateLayout)
+* [View Stub](ViewStub)
 * [Fragment 生命周期](FragmentLifecycle)
 
 ### 异步
