@@ -4,15 +4,22 @@
 * 布局需要动态加载，使用 ViewStub。
 * 需要定义一个动态加载的布局。
 * 动态加载的两种方法：
-	* 1. ViewStub viewStub = (ViewStub) findViewById(R.id.viewStubLoading);
+	* 1. inflate
+```java
+       ViewStub viewStub = (ViewStub) findViewById(R.id.viewStubLoading);
        View view = viewStub.inflate();
-  * 2. ViewStub viewStub = (ViewStub)findViewById(R.id.viewStubLoading);
+```
+  * 2. setVisibility(View.VISIBLE)
+```java
+       ViewStub viewStub = (ViewStub)findViewById(R.id.viewStubLoading);
        viewStub.setVisibility(View.VISIBLE);
+```
 * 使用完动态加载的布局，需要移除。viewStub.setVisibility(View.GONE);
   * View.GONE 布局可以隐藏且占用的空间也被收回。
 
 
 ### 下载是模拟加载新闻的实现代码
+#### MainActivity
 ```java
 public class MainActivity extends ActionBarActivity {
     private ViewStub viewStub = null;
@@ -88,7 +95,7 @@ public class MainActivity extends ActionBarActivity {
 }
 ```
 
-### activity_main.xml
+#### activity_main.xml
 ```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
@@ -126,7 +133,7 @@ public class MainActivity extends ActionBarActivity {
 </RelativeLayout>
 ```
 
-### loading.xml
+#### loading.xml
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
