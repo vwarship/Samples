@@ -10,6 +10,7 @@
 * [Fragment Transaction](FragmentTransaction)
 * [自定义视图 - 继承现有视图](CustomViewByExtendsExistingView)
 * [自定义视图 - 复合视图](CustomViewByCombinationView)
+* [自定义 ArrayAdapter](CustomArrayAdapter)
 * [使用自定义字体](UseCustomFont)
 
 ### 服务
