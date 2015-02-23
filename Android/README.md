@@ -1,14 +1,18 @@
 ﻿## Android Samples
 
+### 搭建开发环境
 * [Android Studio 搭建模拟器](Android_Studio_Use_HAXM_Run_App.md)
-* [创建服务](CreateService)
-* [使用自定义字体](UseCustomFont)
 
 ### 用户界面
 * [使用代码创建布局](UsingCodeCreateLayout)
 * [View Stub](ViewStub)
 * [Fragment 生命周期](FragmentLifecycle)
 * [Fragment Transaction](FragmentTransaction)
+* [自定义视图 - 继承现有视图](CustomViewByExtendsExistingView)
+* [使用自定义字体](UseCustomFont)
+
+### 服务
+* [创建服务](CreateService)
 
 ### 异步
 * [异步任务](AsyncTask)
