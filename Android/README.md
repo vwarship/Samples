@@ -16,6 +16,9 @@
 ### 意图
 * [Intent](Intent)
 
+### Broadcast Receiver
+* [应用内注册短信接收器](BroadcastReceiver)
+
 ### 服务
 * [创建服务](CreateService)
 

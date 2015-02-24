@@ -31,7 +31,7 @@ public class RouteBroadcastReceiver extends BroadcastReceiver {
                     sb.append("来自：").append(smsMessage.getOriginatingAddress()).append('\n');
                     isFirst = false;
                 }
-                
+
                 sb.append(smsMessage.getMessageBody());
             }
         }
