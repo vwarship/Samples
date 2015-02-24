@@ -21,11 +21,11 @@ public class LoginActivity extends ActionBarActivity {
         EditText etEmail = (EditText)findViewById(R.id.etEmail);
         EditText etPassword = (EditText)findViewById(R.id.etPassword);
 
-        Intent intent = new Intent();
-        intent.putExtra(EMAIL, etEmail.getText().toString());
-        intent.putExtra(PASSWORD, etPassword.getText().toString());
+        Intent data = new Intent();
+        data.putExtra(EMAIL, etEmail.getText().toString());
+        data.putExtra(PASSWORD, etPassword.getText().toString());
 
-        setResult(RESULT_OK, intent);
+        setResult(RESULT_OK, data);
 
         finish();
     }
