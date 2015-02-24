@@ -5,16 +5,20 @@
   Intent intent = new Intent(this, HelloActivity.class);
   startActivity(intent);
 ```
+
 ![](snapshots/intent.jpg)
 ![](snapshots/implicit_start_activity.jpg)
+
 
 ### 2. 隐式启动 Activity
 ```java
   Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:888888888"));
   startActivity(intent);
 ```
+
 ![](snapshots/intent.jpg)
 ![](snapshots/explicit_start_activity.jpg)
+
 
 ### 3. 从 Activity 返回结果
 
@@ -118,6 +122,7 @@ public class LoginActivity extends ActionBarActivity {
 ![](snapshots/intent.jpg)
 ![](snapshots/start_activity_for_result.jpg)
 
+
 ### 参考
-[Intent](http://developer.android.com/reference/android/content/Intent.html)
-[Intents and Intent Filters](http://developer.android.com/guide/components/intents-filters.html)
+* [Intent](http://developer.android.com/reference/android/content/Intent.html)
+* [Intents and Intent Filters](http://developer.android.com/guide/components/intents-filters.html)
