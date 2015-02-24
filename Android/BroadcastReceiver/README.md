@@ -73,4 +73,4 @@ public class MainActivity extends ActionBarActivity {
 ```xml
 <uses-permission android:name="android.permission.RECEIVE_SMS"/>
 ```
-*增加接收短信的权限
+* 增加接收短信的权限
