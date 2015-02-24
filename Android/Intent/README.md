@@ -114,6 +114,7 @@ public class LoginActivity extends ActionBarActivity {
 ```
 * setResult 返回结果
 * finish 关闭当前的 Activity
+
 ![](snapshots/intent.jpg)
 ![](snapshots/start_activity_for_result.jpg)
 
