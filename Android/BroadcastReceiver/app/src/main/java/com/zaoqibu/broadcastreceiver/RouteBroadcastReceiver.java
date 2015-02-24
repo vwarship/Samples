@@ -4,19 +4,13 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.telephony.SmsMessage;
+import android.widget.Toast;
 
 /**
  * Created by vwarship on 2015/2/24.
  */
 public class RouteBroadcastReceiver extends BroadcastReceiver {
-    private Handler handler;
-
-    public RouteBroadcastReceiver(Handler handler) {
-        this.handler = handler;
-    }
 
     @Override
     public void onReceive(final Context context, Intent intent) {
@@ -29,17 +23,20 @@ public class RouteBroadcastReceiver extends BroadcastReceiver {
         if (bundle != null) {
             Object[] msgs = (Object[])bundle.get("pdus");
 
+            boolean isFirst = true;
             for (Object msg : msgs) {
                 SmsMessage smsMessage = SmsMessage.createFromPdu((byte[])msg);
+
+                if (isFirst) {
+                    sb.append("来自：").append(smsMessage.getOriginatingAddress()).append('\n');
+                    isFirst = false;
+                }
+                
                 sb.append(smsMessage.getMessageBody());
             }
         }
 
-        Bundle smsBundle = new Bundle();
-        smsBundle.putString("SMS", sb.toString());
-        Message message = new Message();
-        message.setData(smsBundle);
-        handler.sendMessage(message);
+        Toast.makeText(context, sb.toString(), Toast.LENGTH_LONG).show();
 
         abortBroadcast();
     }
