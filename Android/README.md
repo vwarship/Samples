@@ -22,6 +22,9 @@
 ### 服务
 * [创建服务](CreateService)
 
+### Android Interface Definition Language (AIDL)
+* [基本类型通信](AIDL/PrimitiveTypes)
+
 ### 异步
 * [异步任务](AsyncTask)
 * [线程](Thread)
