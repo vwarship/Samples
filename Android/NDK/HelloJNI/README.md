@@ -140,3 +140,7 @@ public class HelloJNIActivity extends ActionBarActivity {
 10. 运行。
 
 ![](hello-jni.png)
+
+### 参考
+[JNI Tips](http://developer.android.com/training/articles/perf-jni.html)
+[Android Studio: Android Manifest doesn't exists or has incorrect root tag](http://stackoverflow.com/questions/17424135/android-studio-android-manifest-doesnt-exists-or-has-incorrect-root-tag)
