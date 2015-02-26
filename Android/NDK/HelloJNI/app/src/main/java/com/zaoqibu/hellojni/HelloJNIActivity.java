@@ -12,9 +12,10 @@ public class HelloJNIActivity extends ActionBarActivity {
         setContentView(R.layout.activity_hellojni);
 
         HelloJNI helloJNI = new HelloJNI();
+        String hello = helloJNI.stringFromJNI();
 
         TextView textView = (TextView)findViewById(R.id.textView);
-        textView.setText(helloJNI.stringFromJNI());
+        textView.setText(hello);
     }
 
 }
