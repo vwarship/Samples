@@ -22,7 +22,7 @@
 ### 服务
 * [创建服务](CreateService)
 
-### Android Interface Definition Language (AIDL)
+### AIDL - Android Interface Definition Language
 * [基本类型通信](AIDL/PrimitiveTypes)
 
 ### 异步

@@ -2,7 +2,7 @@
 
 ### RemoteService
 
-1. ** 定义 IRemoteService.aidl **
+1. **定义 IRemoteService.aidl**
 
 ```java
 package com.zaoqibu.remoteservice;
@@ -22,7 +22,7 @@ interface IRemoteService {
 
 ![AIDL 所在目录](snapshots/show_iremoteservice_aidl_remoteservice.png)
 
-2. ** 创建服务 RemoteService 类 **
+2. **创建服务 RemoteService 类**
 
 ```java
 public class RemoteService extends Service {
@@ -56,7 +56,7 @@ public class RemoteService extends Service {
 
 * 实现存根代理类 IRemoteService.Stub。
 
-3. ** 在 AndroidManifest.xml 中声明 RemoteService **
+3. **在 AndroidManifest.xml 中声明 RemoteService**
 ```xml
         <service android:name=".RemoteService" android:process=":remote">
             <intent-filter>
@@ -68,13 +68,13 @@ public class RemoteService extends Service {
 
 ### Client
 
-1. ** 从 RemoteService 工程中拷贝 IRemoteService.aidl 文件 **
+1. **从 RemoteService 工程中拷贝 IRemoteService.aidl 文件**
 
 ![AIDL 所在目录](snapshots/show_iremoteservice_aidl_client.png)
 
 * 保持原路径
 
-2. ** 调用 IRemoteService 方法。 **
+2. **调用 IRemoteService 方法。**
 
 ```java
 public class MainActivity extends ActionBarActivity {
