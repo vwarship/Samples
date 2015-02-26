@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.TextView;
 
-
 public class HelloJNIActivity extends ActionBarActivity {
 
     @Override
@@ -12,14 +11,10 @@ public class HelloJNIActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hellojni);
 
+        HelloJNI helloJNI = new HelloJNI();
+
         TextView textView = (TextView)findViewById(R.id.textView);
-        textView.setText(stringFromJNI());
-    }
-
-    public native String  stringFromJNI();
-
-    static {
-        System.loadLibrary("hello-jni");
+        textView.setText(helloJNI.stringFromJNI());
     }
 
 }
