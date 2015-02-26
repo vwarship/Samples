@@ -1,6 +1,7 @@
 ﻿## HelloJNI
 
-1. 创建 HelloJNI 类
+1.**创建 HelloJNI 类**
+
 ```java
 package com.zaoqibu.hellojni;
 
@@ -16,7 +17,7 @@ public class HelloJNI {
 * 原生方法的声明 public native String  stringFromJNI();
 * 静态加载共享库，System.loadLibrary("hello-jni");。库的名字在 jni/Android.mk 文件中定义的 LOCAL_MODULE 变量。
 
-2. javah
+2.**javah**
 
 通过 Java 类生成头文件。
 
@@ -30,7 +31,7 @@ D:\Samples\Android\NDK\HelloJNI\app\src\main\java>javah com.zaoqibu.hellojni.Hel
 D:\Samples\Android\NDK\HelloJNI\app>javah -classpath build/intermediates/classes/debug com.zaoqibu.hellojni.HelloJNI
 ```
 
-3. 增加 jni 目录及文件
+3.**增加 jni 目录及文件**
 ```
 src
 jni\
@@ -40,7 +41,7 @@ jni\
     com_zaoqibu_hellojni_HelloJNI.c
 ```
 
-4. 原生方法的实现 com_zaoqibu_hellojni_HelloJNI.c
+4.**原生方法的实现 com_zaoqibu_hellojni_HelloJNI.c**
 ```c
 #include <com_zaoqibu_hellojni_HelloJNI.h>
 #include <string.h>
@@ -51,7 +52,7 @@ JNIEXPORT jstring JNICALL Java_com_zaoqibu_hellojni_HelloJNI_stringFromJNI(JNIEn
 }
 ```
 
-5. 构建共享库的描述 Android.mk
+5.**构建共享库的描述 Android.mk**
 ```
 LOCAL_PATH := $(call my-dir)
 
@@ -63,18 +64,18 @@ LOCAL_SRC_FILES := com_zaoqibu_hellojni_HelloJNI.c
 include $(BUILD_SHARED_LIBRARY)
 ```
 
-6. 生成所有支持的CPU体系结构的共享库 Application.mk
+6.**生成所有支持的CPU体系结构的共享库 Application.mk**
 ```
 APP_ABI := all
 ```
 
-7. 编译共享库 ndk_build
+7.**编译共享库 ndk_build**
 ```
 D:\Samples\Android\NDK\HelloJNI\app\jni>ndk_build
 ```
 * 生成共享库到 libs 目录。
 
-8. 修改 app 构建文件 build.gradle，打包 APK 时，增加共享库。
+8.**修改 app 构建文件 build.gradle，打包 APK 时，增加共享库。**
 在 android 中增加
 ```json
     sourceSets {
@@ -118,7 +119,7 @@ dependencies {
 }
 ```
 
-9. 调用原生方法。
+9.**调用原生方法。HelloJNIActivity.java**
 ```java
 public class HelloJNIActivity extends ActionBarActivity {
 
@@ -137,10 +138,12 @@ public class HelloJNIActivity extends ActionBarActivity {
 }
 ```
 
-10. 运行。
+10.**运行。**
 
 ![](hello-jni.png)
 
 ### 参考
+
 [JNI Tips](http://developer.android.com/training/articles/perf-jni.html)
+
 [Android Studio: Android Manifest doesn't exists or has incorrect root tag](http://stackoverflow.com/questions/17424135/android-studio-android-manifest-doesnt-exists-or-has-incorrect-root-tag)
