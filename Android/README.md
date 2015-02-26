@@ -25,6 +25,9 @@
 ### AIDL - Android Interface Definition Language
 * [基本类型通信](AIDL/PrimitiveTypes)
 
+### NDK
+* [HelloJNI](NDK/HelloJNI)
+
 ### 异步
 * [异步任务](AsyncTask)
 * [线程](Thread)
