@@ -1,5 +1,7 @@
 ﻿## Android Samples
 
+下面的例子都是用 Android Studio 开发的。
+
 ### 搭建开发环境
 * [Android Studio 搭建模拟器](Android_Studio_Use_HAXM_Run_App.md)
 
@@ -26,7 +28,7 @@
 * [基本类型通信](AIDL/PrimitiveTypes)
 
 ### NDK
-* [HelloJNI](NDK/HelloJNI)
+* [用 JNI 实现与原生代码通信](NDK/HelloJNI)
 
 ### 异步
 * [异步任务](AsyncTask)

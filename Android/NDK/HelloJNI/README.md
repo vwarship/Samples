@@ -1,4 +1,4 @@
-﻿## HelloJNI
+﻿## Android Studio 用 JNI 实现与原生代码通信
 
 1.**创建 HelloJNI 类**
 
