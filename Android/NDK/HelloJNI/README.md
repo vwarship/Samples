@@ -77,7 +77,7 @@ D:\Samples\Android\NDK\HelloJNI\app\jni>ndk_build
 
 8.**修改 app 构建文件 build.gradle，打包 APK 时，增加共享库。**
 在 android 中增加
-```json
+```
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
@@ -86,7 +86,7 @@ D:\Samples\Android\NDK\HelloJNI\app\jni>ndk_build
 ```
 
 修改后
-```json
+```
 apply plugin: 'com.android.application'
 
 android {
