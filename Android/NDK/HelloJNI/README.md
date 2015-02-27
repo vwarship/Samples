@@ -17,7 +17,7 @@ public class HelloJNI {
 * 原生方法的声明 public native String  stringFromJNI();
 * 静态加载共享库，System.loadLibrary("hello-jni");。库的名字在 jni/Android.mk 文件中定义的 LOCAL_MODULE 变量。
 
-2.**javah**
+2.**使用 javah 生成 JNI 头文件**
 
 通过 Java 类生成头文件。
 
