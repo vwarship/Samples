@@ -8,11 +8,17 @@
 ### 用户界面
 * [使用代码创建布局](UsingCodeCreateLayout)
 * [View Stub](ViewStub)
+
 * [Fragment 生命周期](FragmentLifecycle)
 * [Fragment Transaction](FragmentTransaction)
+
 * [自定义视图 - 继承现有视图](CustomViewByExtendsExistingView)
 * [自定义视图 - 复合视图](CustomViewByCombinationView)
+
 * [自定义 ArrayAdapter](CustomArrayAdapter)
+
+* [视图动画 - 补间动画和帧动画](Animation/ViewAnimation)
+
 * [使用自定义字体](UseCustomFont)
 
 ### 意图

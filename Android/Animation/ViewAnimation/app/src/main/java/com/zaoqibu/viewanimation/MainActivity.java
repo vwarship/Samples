@@ -16,6 +16,7 @@ public class MainActivity extends ActionBarActivity {
 
         ImageView image = (ImageView) findViewById(R.id.image);
         Animation hyperspaceJump = AnimationUtils.loadAnimation(this, R.anim.hyperspace_jump);
-        image.startAnimation(hyperspaceJump);    }
+        image.startAnimation(hyperspaceJump);
+    }
 
 }

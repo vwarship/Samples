@@ -10,7 +10,7 @@
         android:pivotX="50%"
         android:pivotY="50%"
         android:fillAfter="false"
-        android:duration="700" />
+        android:duration="700"/>
     <set
         android:interpolator="@android:anim/accelerate_interpolator"
         android:startOffset="700">
@@ -21,13 +21,13 @@
             android:toYScale="0.0"
             android:pivotX="50%"
             android:pivotY="50%"
-            android:duration="400" />
+            android:duration="400"/>
         <rotate
             android:fromDegrees="0"
             android:toDegrees="-45"
             android:toYScale="0.0"
             android:pivotX="50%"
             android:pivotY="50%"
-            android:duration="400" />
+            android:duration="400"/>
     </set>
 </set>
