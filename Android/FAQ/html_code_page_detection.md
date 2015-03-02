@@ -24,5 +24,5 @@ private String getCharsetName(String url) {
 
 ### 参考
 
-![cpdetector](http://cpdetector.sourceforge.net/usage.shtml)
+* [cpdetector](http://cpdetector.sourceforge.net/usage.shtml)
 
