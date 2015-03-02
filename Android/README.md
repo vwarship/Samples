@@ -62,6 +62,10 @@
 
 * [XML 服务解析](XMLServiceParse)
 
+### XML 解析
+
+* [XmlPullParser][XmlPullParser]
+
 ### 控件
 
 * [ListFragment](ListFragmentExample)
