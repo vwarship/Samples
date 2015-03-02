@@ -86,6 +86,6 @@
 
 ### FAQ
 
-* [在代码中指定度量单位](FAQ/html_using_measure_unit.md)
+* [在代码中指定度量单位](FAQ/using_measure_unit.md)
 
-* [HTML 代码页探测](FAQ/code_page_detection.md)
+* [HTML 代码页探测](FAQ/html_code_page_detection.md)
