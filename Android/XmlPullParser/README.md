@@ -110,3 +110,13 @@
 ```
 
 ![](xmlpullparser_parse_rss2.png)
+
+### 参考
+
+* ![XmlPullParser](http://developer.android.com/reference/org/xmlpull/v1/XmlPullParser.html)
+
+* ![XML Pull Parsing](http://xmlpull.org/)
+
+* ![android解析XML总结（SAX、Pull、Dom三种方式）](http://www.cnblogs.com/JerryWang1991/archive/2012/02/24/2365507.html)
+
+* ![How to parse an RSS feed with XmlPullParser?](http://stackoverflow.com/questions/17434135/how-to-parse-an-rss-feed-with-xmlpullparser)
