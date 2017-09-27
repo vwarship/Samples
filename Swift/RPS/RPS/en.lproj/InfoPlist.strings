@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  RPS
+
+  Created by 王军建 on 2017/9/27.
+  Copyright © 2017年 狗吃草. All rights reserved.
+*/
+
+CFBundleDisplayName = "Rock Paper Scissors";

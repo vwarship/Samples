@@ -6,8 +6,6 @@
   Copyright © 2017年 狗吃草. All rights reserved.
 */
 
-PRODUCT_NAME = "Rock Paper Scissors";
-
 GAME_START_TEXT = "Rock, Paper, Scissors?";
 
 GAME_STATE_DRAW = "Draw";

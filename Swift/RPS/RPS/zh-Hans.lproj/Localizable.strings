@@ -6,8 +6,6 @@
   Copyright © 2017年 狗吃草. All rights reserved.
 */
 
-PRODUCT_NAME = "锤头 包袱 剪刀";
-
 GAME_START_TEXT = "锤头，包袱，剪刀？";
 
 GAME_STATE_DRAW = "平局";
