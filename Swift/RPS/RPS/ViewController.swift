@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         playAgainButton.isHidden = true
         rockButton.isHidden = false
         scissorsButton.isHidden = false
-        stateLabel.text = NSLocalizedString("GAME_START_TEXT", comment: "Rock, Paper, Scissors?")
+        stateLabel.text = NSLocalizedString("GAME_START_TEXT", comment: "")
         playerButton.titleLabel?.text = "🤖"
         playerButton.setTitle("🤖", for: UIControlState.normal)
         rockButton.titleLabel?.text = "👊"
@@ -49,13 +49,13 @@ class ViewController: UIViewController {
         setPlayerSign(button: paperButton, sign: sign)
 
         if sign == playerSign {
-            stateLabel.text = NSLocalizedString("GAME_STATE_DRAW", comment: "Draw")
+            stateLabel.text = NSLocalizedString("GAME_STATE_DRAW", comment: "")
         } else if (sign == .paper && playerSign == .rock) ||
             (sign == .rock && playerSign == .scissors) ||
             (sign == .scissors && playerSign == .paper) {
-            stateLabel.text = NSLocalizedString("GAME_STATE_WIN", comment: "You Win")
+            stateLabel.text = NSLocalizedString("GAME_STATE_WIN", comment: "")
         } else {
-            stateLabel.text = NSLocalizedString("GAME_STATE_LOSE", comment: "You Lose")
+            stateLabel.text = NSLocalizedString("GAME_STATE_LOSE", comment: "")
         }
         
         playAgainButton.isHidden = false
