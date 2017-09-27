@@ -1,0 +1,15 @@
+/* 
+  File.strings
+  RPS
+
+  Created by 王军建 on 2017/9/27.
+  Copyright © 2017年 狗吃草. All rights reserved.
+*/
+
+PRODUCT_NAME = "Rock Paper Scissors";
+
+GAME_START_TEXT = "Rock, Paper, Scissors?";
+
+GAME_STATE_DRAW = "Draw";
+GAME_STATE_WIN = "You Win";
+GAME_STATE_LOSE = "You Lose";

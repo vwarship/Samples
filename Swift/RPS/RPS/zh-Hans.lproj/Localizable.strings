@@ -1,0 +1,15 @@
+/* 
+  File.strings
+  RPS
+
+  Created by 王军建 on 2017/9/27.
+  Copyright © 2017年 狗吃草. All rights reserved.
+*/
+
+PRODUCT_NAME = "锤头 包袱 剪刀";
+
+GAME_START_TEXT = "锤头，包袱，剪刀？";
+
+GAME_STATE_DRAW = "平局";
+GAME_STATE_WIN = "你赢";
+GAME_STATE_LOSE = "你输";
