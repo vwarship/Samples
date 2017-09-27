@@ -32,9 +32,13 @@ class ViewController: UIViewController {
         scissorsButton.isHidden = false
         stateLabel.text = "Rock, Paper, Scissors?"
         playerButton.titleLabel?.text = "🤖"
+        playerButton.setTitle("🤖", for: UIControlState.normal)
         rockButton.titleLabel?.text = "👊"
+        rockButton.setTitle("👊", for: UIControlState.normal)
         paperButton.titleLabel?.text = "🖐"
+        paperButton.setTitle("🖐", for: UIControlState.normal)
         scissorsButton.titleLabel?.text = "✌️"
+        scissorsButton.setTitle("✌️", for: UIControlState.normal)
         
         paperButton.isEnabled = true
     }
@@ -65,10 +69,13 @@ class ViewController: UIViewController {
     func setPlayerSign(button: UIButton, sign: Sign) {
         if sign == .rock {
             button.titleLabel?.text = "👊"
+            button.setTitle("👊", for: UIControlState.normal)
         } else if sign == .paper {
             button.titleLabel?.text = "🖐"
+            button.setTitle("🖐", for: UIControlState.normal)
         } else if sign == .scissors {
             button.titleLabel?.text = "✌️"
+            button.setTitle("✌️", for: UIControlState.normal)
         }
     }
     
