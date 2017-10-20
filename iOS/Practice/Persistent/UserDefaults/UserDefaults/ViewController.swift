@@ -24,6 +24,8 @@ class ViewController: UIViewController {
         if let age = UserDefaults.standard.string(forKey: keyAge) {
             ageTextField.text = age
         }
+        
+        print("abc ", UserDefaults.standard.integer(forKey: "ABC"))
     }
 
     override func didReceiveMemoryWarning() {
