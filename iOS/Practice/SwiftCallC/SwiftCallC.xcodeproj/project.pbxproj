@@ -12,7 +12,7 @@
 		134D4DC61F9DD43B00875AF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 134D4DC41F9DD43B00875AF2 /* Main.storyboard */; };
 		134D4DC81F9DD43B00875AF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 134D4DC71F9DD43B00875AF2 /* Assets.xcassets */; };
 		134D4DCB1F9DD43B00875AF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 134D4DC91F9DD43B00875AF2 /* LaunchScreen.storyboard */; };
-		134D4DD51F9DD52E00875AF2 /* CMath.c in Sources */ = {isa = PBXBuildFile; fileRef = 134D4DD31F9DD52E00875AF2 /* CMath.c */; };
+		134D4DD51F9DD52E00875AF2 /* CLanguage.c in Sources */ = {isa = PBXBuildFile; fileRef = 134D4DD31F9DD52E00875AF2 /* CLanguage.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,8 @@
 		134D4DCA1F9DD43B00875AF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		134D4DCC1F9DD43B00875AF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		134D4DD21F9DD52E00875AF2 /* SwiftCallC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftCallC-Bridging-Header.h"; sourceTree = "<group>"; };
-		134D4DD31F9DD52E00875AF2 /* CMath.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CMath.c; sourceTree = "<group>"; };
-		134D4DD41F9DD52E00875AF2 /* CMath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CMath.h; sourceTree = "<group>"; };
+		134D4DD31F9DD52E00875AF2 /* CLanguage.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = CLanguage.c; sourceTree = "<group>"; };
+		134D4DD41F9DD52E00875AF2 /* CLanguage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CLanguage.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +60,8 @@
 			children = (
 				134D4DC21F9DD43B00875AF2 /* ViewController.swift */,
 				134D4DC41F9DD43B00875AF2 /* Main.storyboard */,
-				134D4DD31F9DD52E00875AF2 /* CMath.c */,
-				134D4DD41F9DD52E00875AF2 /* CMath.h */,
+				134D4DD31F9DD52E00875AF2 /* CLanguage.c */,
+				134D4DD41F9DD52E00875AF2 /* CLanguage.h */,
 				134D4DD21F9DD52E00875AF2 /* SwiftCallC-Bridging-Header.h */,
 				134D4DD61F9DD6AF00875AF2 /* Supporting Files */,
 				134D4DCC1F9DD43B00875AF2 /* Info.plist */,
@@ -152,7 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				134D4DD51F9DD52E00875AF2 /* CMath.c in Sources */,
+				134D4DD51F9DD52E00875AF2 /* CLanguage.c in Sources */,
 				134D4DC31F9DD43B00875AF2 /* ViewController.swift in Sources */,
 				134D4DC11F9DD43B00875AF2 /* AppDelegate.swift in Sources */,
 			);
