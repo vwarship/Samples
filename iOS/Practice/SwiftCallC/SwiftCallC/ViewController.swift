@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         
         callGetPointerParamters()
       
-        Add(10, 20)
+        print(Add(10, 20))
     }
 
     private func callSetParamters() {

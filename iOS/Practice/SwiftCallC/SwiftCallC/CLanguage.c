@@ -17,7 +17,7 @@ int c_sub(int x, int y) {
     return x - y;
 }
 
-void NoParamterAndNoReturn() {
+void NoParamterAndNoReturn(void) {
     printf("Call NoParamterAndNoReturn Function\n");
 }
 
