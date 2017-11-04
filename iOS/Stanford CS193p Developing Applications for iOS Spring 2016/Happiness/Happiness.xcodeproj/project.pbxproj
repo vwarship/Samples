@@ -58,8 +58,8 @@
 			children = (
 				134D4D3A1F9940AB00875AF2 /* AppDelegate.swift */,
 				134D4D3E1F9940AB00875AF2 /* Main.storyboard */,
-				134D4D4E1F99433F00875AF2 /* FaceView.swift */,
 				134D4D4C1F99410B00875AF2 /* HappinessViewController.swift */,
+				134D4D4E1F99433F00875AF2 /* FaceView.swift */,
 				134D4D411F9940AB00875AF2 /* Assets.xcassets */,
 				134D4D431F9940AB00875AF2 /* LaunchScreen.storyboard */,
 				134D4D461F9940AB00875AF2 /* Info.plist */,
